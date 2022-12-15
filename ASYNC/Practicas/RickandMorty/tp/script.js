@@ -24,7 +24,7 @@ async function obtenerDatos(){
 } 
 
 async function mostrarUno(id){
-    let respuesta = await fetch("https://6398b453fe03352a94dbe15d.mockapi.io/api/nombre/"+id,)
+    let respuesta = await fetch("https://6398b453fe03352a94dbe15d.mockapi.io/api/empleados/"+id,)
     let datos = await respuesta.json();
     console.log(datos);
 
@@ -33,14 +33,14 @@ async function mostrarUno(id){
     empleado.innerHTML = "";
 
     let nombreApellido = document.createElement("h4");
-    nombreApellido.innerHTML = datos.nombre +""+ datos.apellido;
+    nombreApellido.innerHTML = datos.nombre +"   "+ datos.apellido;
     
 
     let area = document.createElement("h4");
     area.innerHTML = datos.area;
 
     let imagen = document.createElement("h4");
-    imagen.innerHTML = `<img src="${datos.image}"></img>`
+    imagen.innerHTML = `<img src="${datos.foto}"></img>`
 
     
     personal.appendChild(nombreApellido);
